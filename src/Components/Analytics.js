@@ -3,7 +3,8 @@ import React, { useState , useEffect} from 'react'
 import { contractABI, ERC20ABI, ETHContractAddress } from '../Constants/Constants';
 import * as PushAPI from "@pushprotocol/restapi";
 import * as ethers from "ethers";
-import qr from "../images/qr.jpg";
+// import qr from "../images/qr.jpg";
+import qr from "../images/graph.jpg";
 
 
 function Analytics() {
@@ -47,12 +48,12 @@ function Analytics() {
   return (
     <div className="text-center h-screen pt-10 bg-black text-white font-semibold items-center justify-between ">
       <div className="">
-        <h1 className="border-b-4 pb-3 justify-start items-start ml-[-10%] max-w-[35%] border-b-[#40f0f8] text-2xl ">
+        <h1 className="border-b-4 pb-3 justify-start items-start ml-[-10%] max-w-[55%] border-b-[#40f0f8] text-2xl ">
           Analytics
         </h1>
 
         <div className=" justify-center items-center text-black flex mt-10 mb-[40px] ">
-          <div className="p-[40px] bg-[#ecf0f3] max-w-[800px] flex sm:w-full  sm:h-[378] md:grid grid-flow-col-dense shadow-lg  shadow-slate-500  rounded-3xl ">
+          <div className="p-[40px] bg-[#ecf0f3] max-w-[900px] flex sm:w-full  sm:h-[378] md:grid grid-flow-col-dense shadow-lg  shadow-slate-500  rounded-3xl ">
             <div className=" max-w-[583.333px] max-h-[298px]">
               <div className=" w-full flex">
                 <label className=" font-bold  " for="cars">
@@ -91,7 +92,7 @@ function Analytics() {
                 </div>
               </div>
             </div>
-            <div className="ml-4 w-[150px] h-[150px]">
+            <div className="ml-4 w-[400px] h-[400px]">
               <img src={qr} alt="/QR" className=" " />
             </div>
           </div>

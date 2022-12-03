@@ -8,6 +8,8 @@ import * as PushAPI from "@pushprotocol/restapi";
 import { Chat } from "@pushprotocol/uiweb";
 import { contractABI, ERC20ABI, ETHContractAddress } from '../Constants/Constants';
 
+// import * as dotenv from 'dotenv'
+// dotenv.config();
 
 function API() {
   const [btnClicked, setBtnClicked] = useState(false)

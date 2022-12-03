@@ -55,7 +55,7 @@ function App() {
        
     {/* <p> Connected as : {account}</p> */}
 
-    <Router basename='/'>
+    <HashRouter basename='/'>
     {/* <HashRouter > */}
     <div className="App">
   
@@ -68,7 +68,7 @@ function App() {
         </Route>
   
 
-        <Route exact path="/Deploy" component={Deploy}> 
+        <Route exact path="#/Deploy" component={Deploy}> 
         </Route>
 
         <Route  path="/Analytics" component={Analytics}>
@@ -82,7 +82,7 @@ function App() {
 
 
     </div>
-    </Router>
+    </HashRouter>
 
   </div>
 

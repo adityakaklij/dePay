@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pushprotocol/restapi": "^0.2.1",
+    "@pushprotocol/uiweb": "^0.2.3",
     "cra-template": "1.2.0",
+    "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.1",
-    "@pushprotocol/restapi": "^0.2.1",
-    "@pushprotocol/uiweb": "^0.2.3",
-    "dotenv": "^16.0.3"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

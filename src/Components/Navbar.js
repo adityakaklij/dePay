@@ -79,19 +79,19 @@ export default function Navbar() {
           </li>
 
           <li className="ml-10 text-base pt-2 uppercase hover:text-[#00ADB5]">
-            <a className="nav-link" href="/Deploy">
+            <a className="nav-link" href="#/Deploy">
               Deploy
             </a>
           </li>
 
           <li className="ml-10 text-base pt-2 uppercase hover:text-[#00ADB5]">
-            <a className="nav-link" href="/Analytics">
+            <a className="nav-link" href="#/Analytics">
               Analytics
             </a>
           </li>
 
           <li className="ml-10 shadow-gray-700 shadow-md text-sm font-semibold text-white bg-[#5627FF] p-2   rounded-full ">
-            <a className="nav-link" href="/API">
+            <a className="nav-link" href="#/API">
               {ensAccount}
             </a>
           </li>

@@ -68,7 +68,7 @@ function App() {
         </Route>
   
 
-        <Route exact path="#/Deploy" component={Deploy}> 
+        <Route exact path="/Deploy" component={Deploy}> 
         </Route>
 
         <Route  path="/Analytics" component={Analytics}>

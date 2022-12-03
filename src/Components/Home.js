@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 function Home() {
   return (
-    <div className="bg-black overflow-x-clip p-10 w-full">
+    <div className="bg-black h-full overflow-auto p-10 w-full">
       <div className=" text-center pt-10 font-extrabold text-white ">
         <p className="p-5 text-[40px] ">
           <span className="text-[#00ADB5]">Decentralized</span> Payment Gateway

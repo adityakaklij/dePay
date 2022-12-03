@@ -1,12 +1,6 @@
 import { ethers } from "ethers";
 import React, { useState } from "react";
-import {
-  contractABI,
-  contractByteCode,
-  ETHContractAddress,
-  polygonContractAddress,
-  ShardeumContractAddress,
-} from "../Constants/Constants";
+import { contractABI, contractByteCode, ETHContractAddress, polygonContractAddress, ShardeumContractAddress} from "../Constants/Constants";
 
 function Deploy() {
   const [name, setName] = useState("Payment Gateway");
@@ -25,7 +19,8 @@ function Deploy() {
     const contract = await factory.deploy([
       "0x5a1899faff22a2b3ea0294d86cd1be6269931ef1",
       "0x0F71B2a7898EE371b8D1fDc9352dC9cbBC18294e",
-    ]);
+    ] , name);
+    
     // const contract = await factory.deploy();
     console.log("address- ", contract.address);
     window.alert(`contract depolyed at ${contract.address}`);
@@ -49,42 +44,19 @@ function Deploy() {
     return value;
   };
 
-  //  ########## EPNS ########
-  // const getData = async ()=> {
-  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
-  //     var name = await provider.lookupAddress(account);
-  //     console.log("name",name)
-
-  //     var address = await provider.resolveName('adityak.eth');
-  //     console.log("address", address)
-
-  //     var balance = await provider.getBalance('adityak.eth');
-  //     console.log("balance",balance.toString())
-
-  //     // const resolver = await provider.getResolver('adityak.eth');
-  //     // console.log("resolver", resolver)
-  //     // const contentHash = await resolver.getContentHash();
-  //     // console.log("contentHash",contentHash)
-  //     // const btcAddress = await resolver.getAddress(0);
-  //     // console.log("btcAddress",btcAddress)
-  //     // const dogeAddress = await resolver.getAddress(3);
-  //     // console.log("dogeAddress",dogeAddress)
-  //     // const email = await resolver.getText("email");
-  //     // console.log("email", email)
-
   return (
-    <div className="text-center h-auto bg-black pt-10 p-5  font-semibold items-center justify-between ">
+    <div className="text-center h-full bg-black pt-10 p-5  font-semibold items-center justify-between ">
       
       <p className=" pr-[20px] border-b-4 pb-3 border-b-[#40f0f8] w-40 text-2xl font-bold text-white ">Deploy</p>
 
       <div className="w-full flex justify-center items-center">
-      <div className=" bg-[#ecf0f3] pb-5 pr-5 rounded-2xl border-spacing-4 border border-gray-400 border-x-2 border-y-4 sm:max-w-[60%]">
+      <div className=" bg-[#ecf0f3] pb-5 pr-5 rounded-2xl border-spacing-4 border border-gray-400 border-x-2 border-y-4 w-[600px]">
 
         <br />
         <br />
 
-        <div className=" w-full text-center items-center justify-center flex">
-          <label className=" mx-3 " for="cars">
+        <div className=" w-full text-center items-center justify-center flex text-[18px]">
+          <label className=" mx-3 "  for="cars">
             Select Blockchain:
           </label>
 
@@ -96,7 +68,7 @@ function Deploy() {
           bg-[#00ADB5]
           text-white
           font-medium
-          text-xs
+          text-sm
           leading-tight
           uppercase
           rounded
@@ -112,9 +84,8 @@ function Deploy() {
             id="chains"
             size="1"
           >
-            <option className="dropdown-item" value="ETH-Goerli">
-              ETH-Goerli
-            </option>
+            <option value="Shardeum">FVM</option>
+            <option className="dropdown-item" value="ETH-Goerli">ETH-Goerli</option>
             <option value="Shardeum">Shardeum</option>
             <option value="Polygon">Polygon</option>
             <option value="Other">Other</option>
@@ -161,10 +132,10 @@ function Deploy() {
               name="make"
               placeholder="Select Tokens"
               className="selectpicker"
-              multiple
+              // multiple
               data-live="true"
             >
-              <option data-count="2" value="USDT">
+              <option data-count="1" value="TFIL">
                 TFIL
               </option>
               <option data-count="2" value="USDT">

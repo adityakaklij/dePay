@@ -5,7 +5,10 @@ import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  
   const [connectIs, setConnectIs] = useState("Connect");
+  const [ensAccount, setEnsAccount] = useState()
+  const [account, setAccount] = useState(null)
 
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
@@ -13,16 +16,33 @@ export default function Navbar() {
   const [linkColor, setLinkColor] = useState("#1f2937");
 
   useEffect(() => {
-    //   Connect()
-  });
+    Connect()
+  })
 
+  // function shortenAddress(add){
+  //   return `${add.slice(0,4)}...${add.slice(add.length - 4)}`
+  // }
   async function Connect() {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    await provider.send("eth_requestAccounts", []);
-    const signer = provider.getSigner();
-    const myAddress = await signer.getAddress();
-    // setMainAddress(myAddress)
-    setConnectIs("Connected");
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = provider.getSigner()
+      const myAddress = await signer.getAddress()
+      // setMainAddress(myAddress)
+      setConnectIs("Connected")
+      // setAccount(myAddress)
+      setAccount(myAddress)
+      // setEnsAccount(await provider.lookupAddress(account))
+      let m = await provider.lookupAddress(account)
+      if (m === null){
+          setEnsAccount(`${myAddress.slice(0,4)}...${myAddress.slice(myAddress.length - 4)}`)
+          console.log("from if", ensAccount)
+      }
+      else{
+          setEnsAccount(m)
+          console.log("from else", ensAccount)
+      }
+      console.log(m)
   }
 
   useEffect(() => {
@@ -35,6 +55,7 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleShadow);
   }, []);
+
 
   const handleNav = () => {
     setNav(!nav);
@@ -69,9 +90,9 @@ export default function Navbar() {
             </a>
           </li>
 
-          <li className="ml-10 shadow-gray-700 shadow-md text-sm font-semibold text-white uppercase bg-[#5627FF] p-2   rounded-full ">
+          <li className="ml-10 shadow-gray-700 shadow-md text-sm font-semibold text-white bg-[#5627FF] p-2   rounded-full ">
             <a className="nav-link" href="/API">
-              Address
+              {ensAccount}
             </a>
           </li>
 

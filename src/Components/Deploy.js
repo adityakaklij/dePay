@@ -45,7 +45,7 @@ function Deploy() {
   };
 
   return (
-    <div className="text-center h-full bg-black pt-10 p-5  font-semibold items-center justify-between ">
+    <div className="text-center h-screen bg-black pt-10 p-5  font-semibold items-center justify-between ">
       
       <p className=" pr-[20px] border-b-4 pb-3 border-b-[#40f0f8] w-40 text-2xl font-bold text-white ">Deploy</p>
 

@@ -45,5 +45,7 @@ dePay uses push protocol to get the notifications using blockchain, personalised
 
 <br>
 ## Realtime analytics
+
 ![image](https://user-images.githubusercontent.com/90379168/230555011-d5825a57-ac98-44ad-bc49-bc900f64d83a.png)
+
 <hr>
